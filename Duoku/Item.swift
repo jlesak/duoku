@@ -2,7 +2,7 @@
 //  Item.swift
 //  Duoku
 //
-//  Created by Jan Lesák on 11.02.2025.
+//  Created by Jan Lesák on 11.02.2025
 //
 
 import Foundation
