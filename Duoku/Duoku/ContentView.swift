@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Duoku
 //
-//  Created by Jan Lesák on 11.02.2025.
+//  Created by Jan Lesák on 06.04.2025.
 //
 
 import SwiftUI

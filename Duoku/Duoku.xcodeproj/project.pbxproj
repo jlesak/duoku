@@ -7,40 +7,53 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		8C910D202D5B4C9200664C36 /* PBXContainerItemProxy */ = {
+		8CE1875F2DA270E300465C84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C910D052D5B4C9000664C36 /* Project object */;
+			containerPortal = 8CE187452DA270E200465C84 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8C910D0C2D5B4C9000664C36;
+			remoteGlobalIDString = 8CE1874C2DA270E200465C84;
 			remoteInfo = Duoku;
 		};
-		8C910D2A2D5B4C9200664C36 /* PBXContainerItemProxy */ = {
+		8CE187692DA270E300465C84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C910D052D5B4C9000664C36 /* Project object */;
+			containerPortal = 8CE187452DA270E200465C84 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8C910D0C2D5B4C9000664C36;
+			remoteGlobalIDString = 8CE1874C2DA270E200465C84;
 			remoteInfo = Duoku;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C910D0D2D5B4C9000664C36 /* Duoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C910D1F2D5B4C9200664C36 /* DuokuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuokuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C910D292D5B4C9200664C36 /* DuokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE1874D2DA270E200465C84 /* Duoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE1875E2DA270E300465C84 /* DuokuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuokuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE187682DA270E300465C84 /* DuokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8CE187702DA270E300465C84 /* Exceptions for "Duoku" folder in "Duoku" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8CE1874C2DA270E200465C84 /* Duoku */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8C910D0F2D5B4C9000664C36 /* Duoku */ = {
+		8CE1874F2DA270E200465C84 /* Duoku */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8CE187702DA270E300465C84 /* Exceptions for "Duoku" folder in "Duoku" target */,
+			);
 			path = Duoku;
 			sourceTree = "<group>";
 		};
-		8C910D222D5B4C9200664C36 /* DuokuTests */ = {
+		8CE187612DA270E300465C84 /* DuokuTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DuokuTests;
 			sourceTree = "<group>";
 		};
-		8C910D2C2D5B4C9200664C36 /* DuokuUITests */ = {
+		8CE1876B2DA270E300465C84 /* DuokuUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DuokuUITests;
 			sourceTree = "<group>";
@@ -48,21 +61,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C910D0A2D5B4C9000664C36 /* Frameworks */ = {
+		8CE1874A2DA270E200465C84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D1C2D5B4C9200664C36 /* Frameworks */ = {
+		8CE1875B2DA270E300465C84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D262D5B4C9200664C36 /* Frameworks */ = {
+		8CE187652DA270E300465C84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,22 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C910D042D5B4C9000664C36 = {
+		8CE187442DA270E200465C84 = {
 			isa = PBXGroup;
 			children = (
-				8C910D0F2D5B4C9000664C36 /* Duoku */,
-				8C910D222D5B4C9200664C36 /* DuokuTests */,
-				8C910D2C2D5B4C9200664C36 /* DuokuUITests */,
-				8C910D0E2D5B4C9000664C36 /* Products */,
+				8CE1874F2DA270E200465C84 /* Duoku */,
+				8CE187612DA270E300465C84 /* DuokuTests */,
+				8CE1876B2DA270E300465C84 /* DuokuUITests */,
+				8CE1874E2DA270E200465C84 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8C910D0E2D5B4C9000664C36 /* Products */ = {
+		8CE1874E2DA270E200465C84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C910D0D2D5B4C9000664C36 /* Duoku.app */,
-				8C910D1F2D5B4C9200664C36 /* DuokuTests.xctest */,
-				8C910D292D5B4C9200664C36 /* DuokuUITests.xctest */,
+				8CE1874D2DA270E200465C84 /* Duoku.app */,
+				8CE1875E2DA270E300465C84 /* DuokuTests.xctest */,
+				8CE187682DA270E300465C84 /* DuokuUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,134 +108,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C910D0C2D5B4C9000664C36 /* Duoku */ = {
+		8CE1874C2DA270E200465C84 /* Duoku */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C910D332D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "Duoku" */;
+			buildConfigurationList = 8CE187712DA270E300465C84 /* Build configuration list for PBXNativeTarget "Duoku" */;
 			buildPhases = (
-				8C910D092D5B4C9000664C36 /* Sources */,
-				8C910D0A2D5B4C9000664C36 /* Frameworks */,
-				8C910D0B2D5B4C9000664C36 /* Resources */,
+				8CE187492DA270E200465C84 /* Sources */,
+				8CE1874A2DA270E200465C84 /* Frameworks */,
+				8CE1874B2DA270E200465C84 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8C910D0F2D5B4C9000664C36 /* Duoku */,
+				8CE1874F2DA270E200465C84 /* Duoku */,
 			);
 			name = Duoku;
 			packageProductDependencies = (
 			);
 			productName = Duoku;
-			productReference = 8C910D0D2D5B4C9000664C36 /* Duoku.app */;
+			productReference = 8CE1874D2DA270E200465C84 /* Duoku.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C910D1E2D5B4C9200664C36 /* DuokuTests */ = {
+		8CE1875D2DA270E300465C84 /* DuokuTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C910D362D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "DuokuTests" */;
+			buildConfigurationList = 8CE187762DA270E300465C84 /* Build configuration list for PBXNativeTarget "DuokuTests" */;
 			buildPhases = (
-				8C910D1B2D5B4C9200664C36 /* Sources */,
-				8C910D1C2D5B4C9200664C36 /* Frameworks */,
-				8C910D1D2D5B4C9200664C36 /* Resources */,
+				8CE1875A2DA270E300465C84 /* Sources */,
+				8CE1875B2DA270E300465C84 /* Frameworks */,
+				8CE1875C2DA270E300465C84 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8C910D212D5B4C9200664C36 /* PBXTargetDependency */,
+				8CE187602DA270E300465C84 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				8C910D222D5B4C9200664C36 /* DuokuTests */,
+				8CE187612DA270E300465C84 /* DuokuTests */,
 			);
 			name = DuokuTests;
 			packageProductDependencies = (
 			);
 			productName = DuokuTests;
-			productReference = 8C910D1F2D5B4C9200664C36 /* DuokuTests.xctest */;
+			productReference = 8CE1875E2DA270E300465C84 /* DuokuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8C910D282D5B4C9200664C36 /* DuokuUITests */ = {
+		8CE187672DA270E300465C84 /* DuokuUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C910D392D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "DuokuUITests" */;
+			buildConfigurationList = 8CE187792DA270E300465C84 /* Build configuration list for PBXNativeTarget "DuokuUITests" */;
 			buildPhases = (
-				8C910D252D5B4C9200664C36 /* Sources */,
-				8C910D262D5B4C9200664C36 /* Frameworks */,
-				8C910D272D5B4C9200664C36 /* Resources */,
+				8CE187642DA270E300465C84 /* Sources */,
+				8CE187652DA270E300465C84 /* Frameworks */,
+				8CE187662DA270E300465C84 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8C910D2B2D5B4C9200664C36 /* PBXTargetDependency */,
+				8CE1876A2DA270E300465C84 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				8C910D2C2D5B4C9200664C36 /* DuokuUITests */,
+				8CE1876B2DA270E300465C84 /* DuokuUITests */,
 			);
 			name = DuokuUITests;
 			packageProductDependencies = (
 			);
 			productName = DuokuUITests;
-			productReference = 8C910D292D5B4C9200664C36 /* DuokuUITests.xctest */;
+			productReference = 8CE187682DA270E300465C84 /* DuokuUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C910D052D5B4C9000664C36 /* Project object */ = {
+		8CE187452DA270E200465C84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					8C910D0C2D5B4C9000664C36 = {
-						CreatedOnToolsVersion = 16.2;
+					8CE1874C2DA270E200465C84 = {
+						CreatedOnToolsVersion = 16.3;
 					};
-					8C910D1E2D5B4C9200664C36 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 8C910D0C2D5B4C9000664C36;
+					8CE1875D2DA270E300465C84 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 8CE1874C2DA270E200465C84;
 					};
-					8C910D282D5B4C9200664C36 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 8C910D0C2D5B4C9000664C36;
+					8CE187672DA270E300465C84 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 8CE1874C2DA270E200465C84;
 					};
 				};
 			};
-			buildConfigurationList = 8C910D082D5B4C9000664C36 /* Build configuration list for PBXProject "Duoku" */;
+			buildConfigurationList = 8CE187482DA270E200465C84 /* Build configuration list for PBXProject "Duoku" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 8C910D042D5B4C9000664C36;
+			mainGroup = 8CE187442DA270E200465C84;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8C910D0E2D5B4C9000664C36 /* Products */;
+			productRefGroup = 8CE1874E2DA270E200465C84 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C910D0C2D5B4C9000664C36 /* Duoku */,
-				8C910D1E2D5B4C9200664C36 /* DuokuTests */,
-				8C910D282D5B4C9200664C36 /* DuokuUITests */,
+				8CE1874C2DA270E200465C84 /* Duoku */,
+				8CE1875D2DA270E300465C84 /* DuokuTests */,
+				8CE187672DA270E300465C84 /* DuokuUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C910D0B2D5B4C9000664C36 /* Resources */ = {
+		8CE1874B2DA270E200465C84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D1D2D5B4C9200664C36 /* Resources */ = {
+		8CE1875C2DA270E300465C84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D272D5B4C9200664C36 /* Resources */ = {
+		8CE187662DA270E300465C84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +245,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C910D092D5B4C9000664C36 /* Sources */ = {
+		8CE187492DA270E200465C84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D1B2D5B4C9200664C36 /* Sources */ = {
+		8CE1875A2DA270E300465C84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C910D252D5B4C9200664C36 /* Sources */ = {
+		8CE187642DA270E300465C84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +269,80 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8C910D212D5B4C9200664C36 /* PBXTargetDependency */ = {
+		8CE187602DA270E300465C84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C910D0C2D5B4C9000664C36 /* Duoku */;
-			targetProxy = 8C910D202D5B4C9200664C36 /* PBXContainerItemProxy */;
+			target = 8CE1874C2DA270E200465C84 /* Duoku */;
+			targetProxy = 8CE1875F2DA270E300465C84 /* PBXContainerItemProxy */;
 		};
-		8C910D2B2D5B4C9200664C36 /* PBXTargetDependency */ = {
+		8CE1876A2DA270E300465C84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C910D0C2D5B4C9000664C36 /* Duoku */;
-			targetProxy = 8C910D2A2D5B4C9200664C36 /* PBXContainerItemProxy */;
+			target = 8CE1874C2DA270E200465C84 /* Duoku */;
+			targetProxy = 8CE187692DA270E300465C84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8C910D312D5B4C9200664C36 /* Debug */ = {
+		8CE187722DA270E300465C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Duoku/Duoku.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Duoku/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jlesak.Duoku;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CE187732DA270E300465C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Duoku/Duoku.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Duoku/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jlesak.Duoku;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CE187742DA270E300465C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,6 +377,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -321,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,7 +406,7 @@
 			};
 			name = Debug;
 		};
-		8C910D322D5B4C9200664C36 /* Release */ = {
+		8CE187752DA270E300465C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,6 +441,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -378,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,70 +463,15 @@
 			};
 			name = Release;
 		};
-		8C910D342D5B4C9200664C36 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Duoku/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jlesak.Duoku;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8C910D352D5B4C9200664C36 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Duoku/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jlesak.Duoku;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		8C910D372D5B4C9200664C36 /* Debug */ = {
+		8CE187772DA270E300465C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jlesak.DuokuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,14 +482,15 @@
 			};
 			name = Debug;
 		};
-		8C910D382D5B4C9200664C36 /* Release */ = {
+		8CE187782DA270E300465C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jlesak.DuokuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,11 +501,12 @@
 			};
 			name = Release;
 		};
-		8C910D3A2D5B4C9200664C36 /* Debug */ = {
+		8CE1877A2DA270E300465C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jlesak.DuokuUITests;
@@ -496,11 +518,12 @@
 			};
 			name = Debug;
 		};
-		8C910D3B2D5B4C9200664C36 /* Release */ = {
+		8CE1877B2DA270E300465C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9XG868Y9B;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jlesak.DuokuUITests;
@@ -515,43 +538,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C910D082D5B4C9000664C36 /* Build configuration list for PBXProject "Duoku" */ = {
+		8CE187482DA270E200465C84 /* Build configuration list for PBXProject "Duoku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C910D312D5B4C9200664C36 /* Debug */,
-				8C910D322D5B4C9200664C36 /* Release */,
+				8CE187742DA270E300465C84 /* Debug */,
+				8CE187752DA270E300465C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C910D332D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "Duoku" */ = {
+		8CE187712DA270E300465C84 /* Build configuration list for PBXNativeTarget "Duoku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C910D342D5B4C9200664C36 /* Debug */,
-				8C910D352D5B4C9200664C36 /* Release */,
+				8CE187722DA270E300465C84 /* Debug */,
+				8CE187732DA270E300465C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C910D362D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "DuokuTests" */ = {
+		8CE187762DA270E300465C84 /* Build configuration list for PBXNativeTarget "DuokuTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C910D372D5B4C9200664C36 /* Debug */,
-				8C910D382D5B4C9200664C36 /* Release */,
+				8CE187772DA270E300465C84 /* Debug */,
+				8CE187782DA270E300465C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C910D392D5B4C9200664C36 /* Build configuration list for PBXNativeTarget "DuokuUITests" */ = {
+		8CE187792DA270E300465C84 /* Build configuration list for PBXNativeTarget "DuokuUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C910D3A2D5B4C9200664C36 /* Debug */,
-				8C910D3B2D5B4C9200664C36 /* Release */,
+				8CE1877A2DA270E300465C84 /* Debug */,
+				8CE1877B2DA270E300465C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8C910D052D5B4C9000664C36 /* Project object */;
+	rootObject = 8CE187452DA270E200465C84 /* Project object */;
 }
