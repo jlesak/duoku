@@ -20,10 +20,33 @@ struct SudokuCellView: View {
                       : Color.white)
                 .border(Color.gray, width: 0.5)
             
-            // Show cell value if it's not '0' which means empty
-            Text(cell.value == 0 ? "" : "\(cell.value)")
-                .font(cell.isPreFilled ? .headline : .subheadline)
-                .foregroundColor(cell.isPreFilled ? .black : .blue)
+            // If a main digit is set, display it.
+            if cell.value != 0 {
+                Text("\(cell.value)")
+                    .font(.system(size: 25))
+                    .foregroundColor(cell.isPreFilled ? .black : .blue)
+            }
+            // If the cell is empty and has notes, display them in a 3x3 grid.
+            else if !cell.notes.isEmpty {
+                VStack(spacing: 1) {
+                    ForEach(0..<3) { row in
+                        HStack(spacing: 1) {
+                            ForEach(1...3, id: \.self) { col in
+                                let noteDigit = row * 3 + col
+                                // Always display the note digit with the same font and size,
+                                // but use opacity(0) when the note is not present.
+                                Text("\(noteDigit)")
+                                    .font(.system(size: 10))
+                                    .foregroundColor(.gray)
+                                    .opacity(cell.notes.contains(noteDigit) ? 1 : 0)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            }
+                        }
+                    }
+                }
+                // Remove extra padding and force the notes grid to fill the available space.
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
         }
         .aspectRatio(1, contentMode: .fit)
     }

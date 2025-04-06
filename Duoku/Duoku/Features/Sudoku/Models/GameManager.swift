@@ -7,42 +7,19 @@
 
 import Foundation
 
-/// Třída reprezentující jednu buňku sudoku. Nyní je ObservableObject a obsahuje stav zvýraznění.
-
-
-/// Represents a single cell in the Sudoku board.
-/// Conforms to Identifiable so SwiftUI can uniquely identify each cell.
-class SudokuCell: Identifiable, ObservableObject {
-    let id = UUID() // Unique identifier for SwiftUI
-    let row: Int // Row index (0-8)
-    let col: Int // Column index (0-8)
-    @Published var value: Int // Current digit (0 if empty)
-    let isPreFilled: Bool // True if cell is part of the original puzzle and cannot be changed
-    @Published var isHighlighted: Bool = false
-    @Published var isSelected: Bool = false
-    
-    init(row: Int, col: Int, value: Int, isPreFilled: Bool) {
-        self.row = row
-        self.col = col
-        self.value = value
-        self.isPreFilled = isPreFilled
-    }
-}
-
 /// Manages the game logic and state of the Sudoku board.
 class GameManager {
-    
     // A 9x9 grid of Sudoku cells.
     var board: [[SudokuCell]] = []
     // Count of mistakes made by the user.
     var mistakesCount: Int = 0
     // Maximum mistakes allowed before game over.
-    let maxMistakes: Int = 3
+    let maxMistakes: Int = 100
     
     var rows: [Int: [SudokuCell]] = [:]
     var columns: [Int: [SudokuCell]] = [:]
     var squares: [Int: [SudokuCell]] = [:]
-    private var highlightedCells: [UUID: SudokuCell] = [:]
+    private var highlightedCells: [SudokuCell] = []
     
     // Initializes the board using a static puzzle. TODO: Generate new puzzle or get it from pre-generated
     init() {
@@ -88,15 +65,15 @@ class GameManager {
     ///   - col: The column index.
     /// - Returns: True if the move is valid, false otherwise.
     func canPlaceValue(_ value: Int, atRow row: Int, col: Int) -> Bool {
-        // Kontrola řádku.
+        // Check row
         for c in 0..<9 {
             if board[row][c].value == value { return false }
         }
-        // Kontrola sloupce.
+        // Check column
         for r in 0..<9 {
             if board[r][col].value == value { return false }
         }
-        // Kontrola 3×3 čtverce.
+        // Check 3x3 square
         let boxRow = (row / 3) * 3
         let boxCol = (col / 3) * 3
         for r in boxRow..<boxRow+3 {
@@ -113,12 +90,11 @@ class GameManager {
     ///   - row: The row index.
     ///   - col: The column index.
     /// - Returns: True if the placement is valid; otherwise, false.
-    func placeValue(_ value: Int, atRow row: Int, col: Int) -> Bool {
-        let cell = board[row][col]
-        // Nelze měnit předvyplněné buňky.
+    func placeValue(_ value: Int, cell: SudokuCell) -> Bool {
+        // Do not change pre-filled cells.
         guard !cell.isPreFilled else { return false }
         
-        if canPlaceValue(value, atRow: row, col: col) {
+        if canPlaceValue(value, atRow: cell.row, col: cell.col) {
             cell.value = value
             return true
         } else {
@@ -139,22 +115,25 @@ class GameManager {
     
     func setHighlight(_ cell: SudokuCell, isHighlighted: Bool)
     {
+        if cell.isHighlighted == isHighlighted { return }
+        
         cell.isHighlighted = isHighlighted
         
-        if isHighlighted
-        {
-            highlightedCells[cell.id] = cell
+        if isHighlighted {
+            highlightedCells.append(cell)
+            return
         }
-        else
-        {
-            highlightedCells.removeValue(forKey: cell.id)
+        
+        // remove from highlighted if exists
+        if let index = highlightedCells.firstIndex(of: cell) {
+            highlightedCells.remove(at: index)
         }
     }
     
     func clearHighlights()
     {
         for cell in highlightedCells {
-            cell.value.isHighlighted = false
+            cell.isHighlighted = false
         }
         
         highlightedCells.removeAll()

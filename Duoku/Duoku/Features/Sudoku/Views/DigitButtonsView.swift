@@ -20,7 +20,6 @@ struct DigitButtonsView: View {
                     Text("\(digit)")
                         .font(.system(size: 35))
                         .frame(width: 32, height: 50)
-                        .background(Color.gray.opacity(0.2))
                 }
             }
         }

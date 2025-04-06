@@ -12,36 +12,34 @@ struct ControlButtonsView: View {
     @ObservedObject var viewModel: SudokuViewModel
     
     var body: some View {
-        HStack(spacing: 20) {
-            // Undo button.
-            Button(action: {
-                viewModel.undo()
-            }) {
-                Text("Undo")
-                    .padding()
-                    .background(Color.blue.opacity(0.2))
-                    .cornerRadius(8)
-            }
-            
-            // Erase button.
+        HStack(spacing: 100) {
+            // Erase button with icon and caption.
             Button(action: {
                 viewModel.erase()
             }) {
-                Text("Erase")
-                    .padding()
-                    .background(Color.red.opacity(0.2))
-                    .cornerRadius(8)
+                VStack(spacing: 4) {
+                    Image(systemName: "eraser")
+                        .font(.system(size: 24))
+                        .foregroundColor(.primary)
+                    Text("Erase")
+                        .font(.caption)
+                        .foregroundColor(.primary)
+                }
+                .padding()
+                .cornerRadius(10)
             }
             
-            // Notes mode toggle button.
-            Button(action: {
-                viewModel.isNotesMode.toggle()
-            }) {
-                Text(viewModel.isNotesMode ? "Notes (ON)" : "Notes (OFF)")
-                    .padding()
-                    .background(Color.green.opacity(0.2))
-                    .cornerRadius(8)
+            // Notes toggle switch with caption.
+            VStack(spacing: 4) {
+                Toggle("", isOn: $viewModel.isNotesMode)
+                    .labelsHidden()
+                    .toggleStyle(SwitchToggleStyle(tint: Color.green))
+                Text("Notes")
+                    .font(.caption)
+                    .foregroundColor(.primary)
             }
+            .padding()
+            .cornerRadius(10)
         }
     }
 }

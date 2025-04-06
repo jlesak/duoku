@@ -16,7 +16,8 @@ class SudokuViewModel: ObservableObject {
     @Published var gameManager = GameManager()
     
     // Currently selected cell (if any).
-    @Published var selectedCell: (row: Int, col: Int)? = nil
+    //@Published var selectedCell: (row: Int, col: Int)? = nil
+    @Published var selectedCell: SudokuCell? = nil
 
     // Timer-related property to track elapsed seconds.
     @Published var secondsElapsed: Int = 0
@@ -44,35 +45,33 @@ class SudokuViewModel: ObservableObject {
     func selectCell(row: Int, col: Int) {
         if (selectedCell != nil)
         {
-            gameManager.board[selectedCell!.row][selectedCell!.col].isSelected = false
+            selectedCell!.isSelected = false
         }
         
-        selectedCell = (row, col)
-        gameManager.board[row][col].isSelected = true
+        selectedCell = gameManager.board[row][col]
+        selectedCell!.isSelected = true
         updateHighlighting()
     }
     
     private func updateHighlighting() {
-        // Zrušení zvýraznění u všech buněk.
         gameManager.clearHighlights()
         
-        guard let selected = selectedCell else { return }
-        gameManager.board[selected.row][selected.col].isSelected = true
+        if (selectedCell == nil) { return }
         
-        // Zvýraznění řádku.
-        if let rowCells = gameManager.rows[selected.row] {
+        // Highlight row
+        if let rowCells = gameManager.rows[selectedCell!.row] {
             for cell in rowCells {
                 gameManager.setHighlight(cell, isHighlighted: true)
             }
         }
-        // Zvýraznění sloupce.
-        if let colCells = gameManager.columns[selected.col] {
+        // Highlight column
+        if let colCells = gameManager.columns[selectedCell!.col] {
             for cell in colCells {
                 gameManager.setHighlight(cell, isHighlighted: true)
             }
         }
-        // Výpočet indexu čtverce a zvýraznění.
-        let squareIndex = (selected.row / 3) * 3 + (selected.col / 3)
+        // highlight square
+        let squareIndex = (selectedCell!.row / 3) * 3 + (selectedCell!.col / 3)
         if let squareCells = gameManager.squares[squareIndex] {
             for cell in squareCells {
                 gameManager.setHighlight(cell, isHighlighted: true)
@@ -81,17 +80,31 @@ class SudokuViewModel: ObservableObject {
     }
     
     /// Places a digit in the selected cell.
+    /// If notes mode is enabled, the digit is toggled in the cell’s notes (only if no main digit is present).
+    /// If notes mode is disabled, the main digit is inserted and any existing notes are cleared.
     /// - Parameter digit: The digit to place.
     func placeDigit(_ digit: Int) {
-        guard let cell = selectedCell else { return }
-            let currentCell = gameManager.board[cell.row][cell.col]
-            let oldValue = currentCell.value
-            
-            let success = gameManager.placeValue(digit, atRow: cell.row, col: cell.col)
-            
-            if success {
-                movesStack.append((row: cell.row, col: cell.col, oldValue: oldValue, newValue: digit))
+        guard selectedCell != nil else { return }
+        // Only allow changes for non pre-filled cells.
+        guard !selectedCell!.isPreFilled else { return }
+        
+        if isNotesMode {
+            // Only allow notes if there is no main digit.
+            guard selectedCell!.value == 0 else { return }
+            if selectedCell!.notes.contains(digit) {
+                selectedCell!.notes.remove(digit)
+            } else {
+                selectedCell!.notes.insert(digit)
             }
+        } else {
+            // Clear any existing notes before placing the main digit.
+            selectedCell!.notes.removeAll()
+            let oldValue = selectedCell!.value
+            let success = gameManager.placeValue(digit, cell: selectedCell!)
+            if success {
+                movesStack.append((row: selectedCell!.row, col: selectedCell!.col, oldValue: oldValue, newValue: digit))
+            }
+        }
     }
     
     /// Undoes the last move made by the user.
