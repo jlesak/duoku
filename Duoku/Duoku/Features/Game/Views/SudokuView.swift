@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-/// The main view that assembles the entire Sudoku UI.
+/// The main Sudoku game view.
 struct SudokuView: View {
-    @StateObject var viewModel = SudokuViewModel()
+    @StateObject var viewModel: SudokuViewModel
+    
+    init(viewModel: SudokuViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         VStack(spacing: 20) {
@@ -53,10 +57,16 @@ struct SudokuView: View {
                   dismissButton: .default(Text("OK")))
         }
     }
-}
-
-struct SudokuView_Previews: PreviewProvider {
-    static var previews: some View {
-        SudokuView()
+    
+#if DEBUG
+    struct SudokuView_Previews: PreviewProvider {
+        static var previews: some View {
+            // For preview purposes, generate a puzzle with an "easy" difficulty.
+            let generated = PuzzleGenerator.generatePuzzle(for: .easy)
+            let gameManager = GameManager(puzzle: generated.puzzle, solution: generated.solution)
+            let viewModel = SudokuViewModel(gameManager: gameManager)
+            return SudokuView(viewModel: viewModel)
+        }
     }
+#endif
 }

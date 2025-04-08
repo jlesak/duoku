@@ -11,6 +11,8 @@ import Foundation
 class GameManager {
     // A 9x9 grid of Sudoku cells.
     var board: [[SudokuCell]] = []
+    /// Stores the complete solution for the current puzzle.
+     var solution: [[Int]] = []
     // Count of mistakes made by the user.
     var mistakesCount: Int = 0
     // Maximum mistakes allowed before game over.
@@ -20,33 +22,25 @@ class GameManager {
     var columns: [Int: [SudokuCell]] = [:]
     var squares: [Int: [SudokuCell]] = [:]
     private var highlightedCells: [SudokuCell] = []
+
+    /// Initializes a new game with a generated puzzle and its solution.
+    /// - Parameters:
+    ///   - puzzle: A 9x9 grid representing the puzzle (0 indicates an empty cell).
+    ///   - solution: A 9x9 grid representing the complete solved board.
+    init(puzzle: [[Int]], solution: [[Int]]) {
+        self.solution = solution
+        buildBoard(with: puzzle)
+    }
     
-    // Initializes the board using a static puzzle. TODO: Generate new puzzle or get it from pre-generated
-    init() {
-        // A static puzzle layout.
-        let puzzle: [[Int]] = [
-            [5,1,0, 8,6,0, 0,0,0],
-            [0,0,0, 0,0,0, 8,0,0],
-            [0,8,6, 0,0,0, 0,0,0],
-            
-            [4,9,0, 0,0,0, 1,0,0],
-            [0,7,0, 2,0,8, 0,9,4],
-            [1,0,0, 0,0,0, 0,3,0],
-            
-            [0,0,0, 7,2,9, 0,0,8],
-            [7,0,2, 0,0,4, 9,0,3],
-            [0,0,9, 5,0,0, 0,4,0]
-        ]
-        
-        // Create the board by mapping over rows and columns.
+    /// Builds the board from a given puzzle grid.
+    private func buildBoard(with puzzle: [[Int]]) {
         board = (0..<9).map { row in
             (0..<9).map { col in
-                let val = puzzle[row][col]
-                return SudokuCell(row: row, col: col, value: val, isPreFilled: val != 0)
+                let cellValue = puzzle[row][col]
+                return SudokuCell(row: row, col: col, value: cellValue, isPreFilled: cellValue != 0)
             }
         }
-        
-        // Dictionaries fill
+        // Build dictionaries for rows, columns, and squares.
         for row in 0..<9 {
             for col in 0..<9 {
                 let cell = board[row][col]
@@ -130,8 +124,19 @@ class GameManager {
         }
     }
     
+    func setNumberSelected(_ digit: Int) {
+        for cell in board.flatMap({ $0 }) {
+            if digit != 0 && cell.value == digit {
+                cell.isNumberSelected = true
+            } else {
+                cell.isNumberSelected = false
+            }
+        }
+    }
+    
     func clearHighlights()
     {
+        // cells in same row, column, and square
         for cell in highlightedCells {
             cell.isHighlighted = false
         }

@@ -15,16 +15,14 @@ struct SudokuCellView: View {
         ZStack {
             // Set background color if the cell or a row/column/square is selected
             Rectangle()
-                .fill(cell.isSelected ? Color.blue.opacity(0.3)
-                      : cell.isHighlighted ? Color.gray.opacity(0.2)
-                      : Color.white)
+                .fill(cellBackgroundColor())
                 .border(Color.gray, width: 0.5)
             
             // If a main digit is set, display it.
             if cell.value != 0 {
                 Text("\(cell.value)")
                     .font(.system(size: 25))
-                    .foregroundColor(cell.isPreFilled ? .black : .blue)
+                    .foregroundColor(cellNumberColor())
             }
             // If the cell is empty and has notes, display them in a 3x3 grid.
             else if !cell.notes.isEmpty {
@@ -49,5 +47,21 @@ struct SudokuCellView: View {
             }
         }
         .aspectRatio(1, contentMode: .fit)
+    }
+    
+    private func cellBackgroundColor() -> Color {
+        if cell.isSelected {
+            return Color.blue.opacity(0.5)
+        } else if cell.isNumberSelected {
+            return Color.blue.opacity(0.3)
+        } else if cell.isHighlighted {
+            return Color.blue.opacity(0.1)
+        } else {
+            return Color.white
+        }
+    }
+    
+    private func cellNumberColor() -> Color {
+        return cell.isPreFilled ? Color.black : Color.blue
     }
 }

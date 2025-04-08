@@ -17,6 +17,7 @@ class SudokuCell: Identifiable, ObservableObject, Equatable {
     let isPreFilled: Bool // True if cell is part of the original puzzle and cannot be changed
     @Published var isHighlighted: Bool = false
     @Published var isSelected: Bool = false
+    @Published var isNumberSelected: Bool = false
     @Published var notes: Set<Int> = []
     
     init(row: Int, col: Int, value: Int, isPreFilled: Bool) {
@@ -24,9 +25,6 @@ class SudokuCell: Identifiable, ObservableObject, Equatable {
         self.col = col
         self.value = value
         self.isPreFilled = isPreFilled
-        
-        notes = Set(1...9)
-        
     }
     
     static func == (lhs: SudokuCell, rhs: SudokuCell) -> Bool {

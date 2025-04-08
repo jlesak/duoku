@@ -11,10 +11,8 @@ import Combine
 /// The ViewModel ties the game logic to the SwiftUI views.
 /// It is marked as ObservableObject so that changes trigger UI updates.
 class SudokuViewModel: ObservableObject {
-    
-    // Instance of GameManager which contains the core game logic.
-    @Published var gameManager = GameManager()
-    
+    @Published var gameManager: GameManager
+
     // Currently selected cell (if any).
     //@Published var selectedCell: (row: Int, col: Int)? = nil
     @Published var selectedCell: SudokuCell? = nil
@@ -28,6 +26,12 @@ class SudokuViewModel: ObservableObject {
     
     // A simple stack to track moves for undo functionality.
     private var movesStack: [(row: Int, col: Int, oldValue: Int, newValue: Int)] = []
+
+    /// Initializes the ViewModel with a specific game.
+    /// - Parameter gameManager: The GameManager instance for the current game.
+    init(gameManager: GameManager) {
+        self.gameManager = gameManager
+    }
     
     /// Starts the game timer.
     func startTimer() {
@@ -43,21 +47,26 @@ class SudokuViewModel: ObservableObject {
     }
     
     func selectCell(row: Int, col: Int) {
-        if (selectedCell != nil)
-        {
+        if (selectedCell != nil) {
             selectedCell!.isSelected = false
         }
         
         selectedCell = gameManager.board[row][col]
         selectedCell!.isSelected = true
+        
         updateHighlighting()
     }
     
     private func updateHighlighting() {
         gameManager.clearHighlights()
-        
+
         if (selectedCell == nil) { return }
         
+        // Highlight same number cells
+        gameManager.setNumberSelected(selectedCell!.value)
+        
+        // TODO: Highlight the notes numbers of the same number
+
         // Highlight row
         if let rowCells = gameManager.rows[selectedCell!.row] {
             for cell in rowCells {
@@ -97,11 +106,14 @@ class SudokuViewModel: ObservableObject {
                 selectedCell!.notes.insert(digit)
             }
         } else {
-            // Clear any existing notes before placing the main digit.
-            selectedCell!.notes.removeAll()
             let oldValue = selectedCell!.value
             let success = gameManager.placeValue(digit, cell: selectedCell!)
             if success {
+                // Clear any existing notes in the cell.
+                selectedCell!.notes.removeAll()
+                
+                // TODO: remove the digit from notes in the same row, column, and square
+                updateHighlighting()
                 movesStack.append((row: selectedCell!.row, col: selectedCell!.col, oldValue: oldValue, newValue: digit))
             }
         }
