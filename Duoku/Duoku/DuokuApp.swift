@@ -11,7 +11,7 @@ import SwiftUI
 struct DuokuApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            AppCoordinator()
         }
     }
 }

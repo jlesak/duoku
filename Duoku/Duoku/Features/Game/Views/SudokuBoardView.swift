@@ -61,8 +61,8 @@ struct SudokuBoardView: View {
 
 struct SudokuBoard_Previews: PreviewProvider {
     static var previews: some View {
-        let generated = PuzzleGenerator.generatePuzzle(for: DifficultyLevel.easy)
-        let gameManager = GameManager(puzzle: generated.puzzle, solution: generated.solution)
+        let gameBoard = PuzzleGenerator.generatePuzzle(for: DifficultyLevel.easy)
+        let gameManager = GameManager(gameBoard: gameBoard)
         let sudokuViewModel = SudokuViewModel(gameManager: gameManager)
         SudokuBoardView(viewModel: sudokuViewModel)
     }

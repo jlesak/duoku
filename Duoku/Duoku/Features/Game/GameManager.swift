@@ -12,7 +12,9 @@ class GameManager {
     // A 9x9 grid of Sudoku cells.
     var board: [[SudokuCell]] = []
     /// Stores the complete solution for the current puzzle.
-     var solution: [[Int]] = []
+    var solution: [[Int]] = []
+    /// The GameBoard model that contains the puzzle and solution
+    private(set) var gameBoard: GameBoard
     // Count of mistakes made by the user.
     var mistakesCount: Int = 0
     // Maximum mistakes allowed before game over.
@@ -23,13 +25,12 @@ class GameManager {
     var squares: [Int: [SudokuCell]] = [:]
     private var highlightedCells: [SudokuCell] = []
 
-    /// Initializes a new game with a generated puzzle and its solution.
-    /// - Parameters:
-    ///   - puzzle: A 9x9 grid representing the puzzle (0 indicates an empty cell).
-    ///   - solution: A 9x9 grid representing the complete solved board.
-    init(puzzle: [[Int]], solution: [[Int]]) {
-        self.solution = solution
-        buildBoard(with: puzzle)
+    /// Initializes a new game with a GameBoard model.
+    /// - Parameter gameBoard: The GameBoard containing the puzzle and solution.
+    init(gameBoard: GameBoard) {
+        self.gameBoard = gameBoard
+        self.solution = gameBoard.solution
+        buildBoard(with: gameBoard.puzzle)
     }
     
     /// Builds the board from a given puzzle grid.
